@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import './App.css';
+import './views/MenuView'
+import { MenuView } from './views/MenuView';
 
 function App() {
   const [title, setTitle] = useState('');
@@ -8,14 +10,7 @@ function App() {
 
   const handleFileUpload = e => {
     const file = e.target.files[0]
-    // const ext = file.name.split('.').pop();
-    // const size = file.size;
-
-    // if (size < 30) {
       setFile(file);
-    // } else {
-      // alert('error');
-    // }
   }
 
   const handleSubmit = (e) => {
@@ -39,7 +34,8 @@ function App() {
 
   return (
     <div className="App">
-      <form>
+      <MenuView></MenuView>
+      {/* <form>
         <input
           type="text"
           value={title}
@@ -51,7 +47,7 @@ function App() {
           onChange={e => handleFileUpload(e)}
         />
         <button onClick={e => handleSubmit(e)}>upload</button>
-      </form>
+      </form> */}
     </div>
   );
 }

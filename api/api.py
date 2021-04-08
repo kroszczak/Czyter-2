@@ -28,7 +28,14 @@ def upload():
     output = list(mongo.db.files.find({}, {'text': False} ))
     for i, record in enumerate(output):
         resultd[i] = make_public_page(record)
-    print(resultd)
+    return resultd
+
+@app.route('/list', methods=['GET'])
+def servelist():
+    resultd = {}
+    output = list(mongo.db.files.find({}, {'text': False} ))
+    for i, record in enumerate(output):
+        resultd[i] = make_public_page(record)
     return resultd
 
 def make_public_page(page):
