@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
-import '../components/FileComponent'
 import FileComponent from '../components/FileComponent'
 
 const Container = styled.div`
@@ -12,27 +11,23 @@ const Container = styled.div`
     width: 100vw;
     height: 100vh;
     overflow-y: scroll;
-    overflow-x: hidden;
-    
+    overflow-x: hidden;`
 
-    
-`
 
-export const MenuView = () => {
-
+const MenuView = () => {
     const [items, setItems] = useState({});
 
     useEffect(() => {  
-
         fetch('/list', { method: 'GET' })
             .then(res => res.json())
             .then(res => setItems(res))
     }, [])
+
     return (
         <Container>
             {Object.keys(items).map((key, index) => <FileComponent key={key}>  </FileComponent>)}
         </Container>
-
-        // {items[key].name}
     )
 }
+
+export default MenuView;

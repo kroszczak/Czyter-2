@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 
-
 const MenuOption = styled.div`
     width: 100px;
     height: 150px;
@@ -10,11 +9,7 @@ const MenuOption = styled.div`
 `
 
 const FileComponent = () => {
-    return (
-        <MenuOption>
-
-        </MenuOption>
-    )
+    return <MenuOption/>
 }
 
 export default FileComponent
